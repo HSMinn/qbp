@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sangmin Ha, Principal Investigator of Quantum-Boltzmann-Protein, an interdisciplinary research project at Sungkyunkwan University (SKKU SAINT).">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070E16">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sangmin Ha · Quantum-Boltzmann-Protein">
+<meta property="og:description" content="Sangmin Ha, Principal Investigator of Quantum-Boltzmann-Protein, an interdisciplinary research project at Sungkyunkwan University (SKKU SAINT).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070E16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%238DB9DD' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23F2B84B'/%3E%3C/svg%3E">
+<!-- QBP PI profile page. Details are supplied by the member. Written 2026-10-16. -->
+<title>Sangmin Ha · Quantum-Boltzmann-Protein</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Noto+Serif+KR:wght@300&display=swap">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui}img{max-width:100%}</style>
+<style>
+/* Layout: a still night hero showing the energy landscape as a relief, paper sections on a faint contour map,
+   one dark band for the Aim, a dark footer. One illustration system (isometric line plates) is reused. */
+:root{
+  --bg:#F0F3F6; --bg-2:#E4E9EF; --surface:#FAFBFD; --surface-2:#F4F7FA;
+  --ink:#0E1A25; --ink-2:#435364; --line:#CBD5DF;
+  --well:#1F5F8E; --well-ink:#164A70; --heat:#C98600; --heat-ink:#835500;
+  --hero-bg:#070E16; --hero-ink:#EAF1F7; --hero-ink-2:#9DB0C1; --hero-line:#8DB9DD; --hero-heat:#F2B84B;
+  --shadow:0 1px 0 rgba(14,26,37,.04),0 18px 48px -20px rgba(14,26,37,.28);
+  --map-a:.15;
+  --font-display:"Newsreader","Noto Serif KR","Nanum Myeongjo","Apple SD Gothic Neo",Georgia,serif;
+  --font-body:"IBM Plex Sans","IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#09121A; --bg-2:#0F1B26; --surface:#0E1924; --surface-2:#122030;
+    --ink:#E8EEF3; --ink-2:#A1B1BF; --line:#22364A;
+    --well:#6CB2E3; --well-ink:#90C7F1; --heat:#F0B544; --heat-ink:#F0B544;
+    --shadow:0 18px 48px -20px rgba(0,0,0,.65);
+    --map-a:.17;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#09121A; --bg-2:#0F1B26; --surface:#0E1924; --surface-2:#122030;
+  --ink:#E8EEF3; --ink-2:#A1B1BF; --line:#22364A;
+  --well:#6CB2E3; --well-ink:#90C7F1; --heat:#F0B544; --heat-ink:#F0B544;
+  --shadow:0 18px 48px -20px rgba(0,0,0,.65);
+  --map-a:.17;
+  color-scheme:dark;
+}
+/* dark bands keep the same look in both themes */
+.night{
+  --bg:var(--hero-bg); --bg-2:#0C1722; --surface:rgba(255,255,255,.04); --surface-2:rgba(255,255,255,.07);
+  --ink:var(--hero-ink); --ink-2:var(--hero-ink-2); --line:rgba(157,176,193,.24);
+  --well:#7DB8E6; --well-ink:#A5D0F2; --heat:var(--hero-heat); --heat-ink:var(--hero-heat);
+  --art-line:#9DC3E3; --art-fill:#0A1520; --art-accent:var(--hero-heat); --art-ink2:var(--hero-ink-2);
+  background:var(--hero-bg); color:var(--hero-ink);
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth; scroll-padding-top:60px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; color:var(--ink); font:400 1rem/1.75 var(--font-body);
+  word-break:normal; overflow-wrap:break-word; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  background:
+    radial-gradient(1100px 620px at 88% -8%, color-mix(in srgb,var(--well) 11%,transparent), transparent 62%),
+    radial-gradient(900px 520px at -6% 46%, color-mix(in srgb,var(--heat) 7%,transparent), transparent 62%),
+    var(--bg);
+  background-attachment:fixed;
+}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0; list-style:none}
+p{max-width:64ch}
+i{font-family:var(--font-display); font-style:italic}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--well); outline-offset:3px; border-radius:3px}
+.mono{font-family:var(--font-mono)}
+.sr{position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+.wrap{--gut:clamp(16px,5vw,56px); max-width:calc(1180px + 2 * var(--gut)); margin-inline:auto; padding-inline:var(--gut)}
+
+/* background layers */
+.bgfx{position:fixed; inset:0; z-index:0; pointer-events:none}
+.bgfx canvas{display:block; width:100%; height:100%}
+.grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+:root[data-theme="dark"] .grain{opacity:.07}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .grain{opacity:.07}}
+.page{position:relative; z-index:2}
+
+/* navigation */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; height:64px; color:var(--hero-ink); border-bottom:1px solid transparent; transition:background .25s,border-color .25s,color .25s}
+.nav.scrolled{color:var(--ink); background:color-mix(in srgb,var(--bg) 80%,transparent); -webkit-backdrop-filter:blur(16px) saturate(1.3); backdrop-filter:blur(16px) saturate(1.3); border-bottom-color:var(--line)}
+.nav-in{height:100%; display:flex; align-items:center; gap:1.5rem}
+.brand{display:inline-flex; align-items:center; gap:.65rem; font:500 .8125rem/1 var(--font-mono); letter-spacing:.18em; text-decoration:none; color:inherit}
+.brand-mark{position:relative; width:18px; height:18px; border:1.5px solid currentColor; border-radius:50%}
+.brand-mark::after{content:""; position:absolute; inset:4px; border-radius:50%; background:var(--hero-heat)}
+.links{display:none; margin-left:auto; gap:.25rem 1.8rem; font-size:.875rem}
+.links a{color:inherit; opacity:.8; text-decoration:none; padding:.4rem 0; border-bottom:1px solid transparent}
+.links a:hover{opacity:1; border-bottom-color:currentColor}
+.nav-right{display:flex; gap:.4rem; margin-left:auto}
+.icon-btn{width:38px; height:38px; display:inline-grid; place-items:center; border:1px solid color-mix(in srgb,currentColor 30%,transparent); border-radius:50%; background:transparent; color:inherit; cursor:pointer}
+.icon-btn:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.icon-btn svg{width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round}
+.mobile-menu{position:absolute; left:0; right:0; top:64px; display:grid; padding:10px var(--gut,16px) 18px; color:var(--ink); background:var(--bg); border-bottom:1px solid var(--line); box-shadow:0 18px 40px -20px rgba(0,0,0,.5)}
+.mobile-menu a{padding:.7rem 0; text-decoration:none; border-bottom:1px solid var(--line)}
+@media (min-width:900px){.links{display:flex} .nav-right{margin-left:0} #menuBtn,.mobile-menu{display:none!important}}
+
+/* hero (still image, no motion) */
+.hero{position:relative; overflow:hidden; margin-top:-64px; padding-top:64px; display:flex; flex-direction:column}
+.hero > .wrap{width:100%}
+.hero canvas#relief{display:block; width:100%; height:clamp(240px,62vw,340px); order:2}
+.hero-shade{display:none}
+.hero-in{order:1; padding-block:44px 8px}
+.hero-cap{order:3; padding:10px var(--gut,16px) 30px; font:400 .6875rem/1.4 var(--font-mono); letter-spacing:.06em; color:var(--hero-ink-2); max-width:none}
+.title{font-family:var(--font-display); font-weight:300; font-size:clamp(3.1rem,8.2vw,6.1rem); line-height:.97; letter-spacing:-.025em; margin:0 0 1.5rem; color:var(--hero-ink)}
+.title span,.title em{display:block}
+.title em{font-style:italic; font-weight:300; color:var(--well-ink); padding-left:.16em}
+.affil{margin:0 0 1.6rem}
+.affil span{display:block}
+.affil .uni{font:500 .8125rem/1.5 var(--font-mono); letter-spacing:.18em; text-transform:uppercase; color:var(--hero-heat); margin-bottom:.3rem}
+.affil .prj{font:300 italic clamp(1.25rem,2.3vw,1.6rem)/1.35 var(--font-display); color:var(--hero-ink)}
+.lede{font-size:clamp(1.02rem,1.4vw,1.15rem); line-height:1.75; max-width:30em; margin:0 0 1.3rem; color:var(--hero-ink-2)}
+.tags{display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.9rem; padding:0; list-style:none}
+.tags .tag{display:inline-flex; align-items:center; padding:.4rem .8rem; border:1px solid var(--line); border-radius:999px; font:500 .75rem/1 var(--font-mono); letter-spacing:.04em; color:var(--ink)}
+.tags .tag.focus{border-color:var(--hero-heat); color:var(--hero-heat)}
+.cta{display:flex; flex-wrap:wrap; gap:.7rem; max-width:none}
+.pill{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1.25rem; border:1px solid var(--ink); border-radius:999px; font:500 .9rem/1.2 var(--font-body); text-decoration:none; color:var(--ink); background:transparent; transition:background .2s,color .2s}
+.pill:hover{background:color-mix(in srgb,var(--ink) 14%,transparent)}
+.pill.solid{background:var(--ink); color:var(--bg)}
+.pill.solid:hover{filter:brightness(.92); background:var(--ink)}
+@media (min-width:900px){
+  .hero canvas#relief{position:absolute; inset:0; width:100%; height:100%; order:0}
+  .hero-shade{display:block; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(90deg,var(--hero-bg) 0%,color-mix(in srgb,var(--hero-bg) 88%,transparent) 30%,color-mix(in srgb,var(--hero-bg) 40%,transparent) 48%,transparent 64%),
+               linear-gradient(0deg,var(--hero-bg) 0%,transparent 20%)}
+  .hero-in{position:relative; z-index:2; display:flex; align-items:center; min-height:clamp(540px,46vw,680px); padding-block:72px 56px}
+  .hero-cap{position:absolute; right:var(--gut,56px); bottom:20px; z-index:2; padding:0}
+}
+
+/* sections */
+.sec{padding-block:clamp(64px,9vw,120px)}
+.sec.alt{background:color-mix(in srgb,var(--bg-2) 60%,transparent); border-block:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.sec-head{margin-bottom:clamp(28px,4vw,52px)}
+.eyebrow{font:500 .75rem/1.5 var(--font-mono); letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); margin:0 0 1rem}
+h2{font-family:var(--font-display); font-weight:400; font-size:clamp(1.6rem,3vw,2.3rem); line-height:1.32; letter-spacing:-.01em; text-wrap:balance; max-width:22em}
+.lead{font-size:1.0625rem; line-height:1.8; color:var(--ink-2); max-width:52ch; margin-top:1rem}
+.statement{font-family:var(--font-display); font-weight:300; font-size:clamp(1.7rem,3.6vw,2.8rem); line-height:1.25; letter-spacing:-.015em; max-width:24em; text-wrap:balance}
+.statement mark{background:linear-gradient(transparent 70%,color-mix(in srgb,var(--heat) 34%,transparent) 70%); color:inherit; padding:0 .06em}
+
+/* premises */
+.prem{display:grid; grid-template-columns:minmax(0,1fr); gap:16px}
+@media (min-width:760px){.prem{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pcard{display:flex; flex-direction:column; gap:.7rem; min-width:0; padding:1.6rem 1.6rem 1.5rem; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:var(--shadow)}
+.ic{width:30px; height:30px; fill:none; stroke:var(--well-ink); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round}
+.pcard .tag{font:500 .6875rem/1.4 var(--font-mono); letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); margin-top:.3rem}
+.pcard h3{font:400 1.3rem/1.4 var(--font-display)}
+.pcard p{color:var(--ink-2); font-size:.9375rem; line-height:1.78}
+.pcard .mini-formula{margin-top:.2rem; padding-top:.8rem; border-top:1px solid var(--line); font:400 1.3rem/1.6 var(--font-display); color:var(--ink); max-width:none}
+.mini-formula sup,.mini-formula sub{line-height:0; font-size:.62em}
+.pcard .cap{margin-top:-.2rem; font-size:.8125rem; line-height:1.7; color:var(--ink-2)}
+
+/* aim band */
+.band{border-block:1px solid rgba(157,176,193,.14)}
+.aim{display:grid; gap:2.4rem clamp(24px,5vw,72px); align-items:center}
+@media (min-width:900px){.aim{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.aim-sub{margin-top:1.4rem; max-width:44em; color:var(--ink-2); font-size:1.0625rem; line-height:1.8}
+.aim-note{margin-top:1.8rem; font-size:.9375rem; color:var(--ink-2); max-width:44em}
+.steps{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:clamp(28px,4vw,48px)}
+.steps li{display:inline-flex; align-items:center; gap:.45rem; padding:.5rem .9rem; border:1px solid var(--line); border-radius:999px; font:500 .75rem/1 var(--font-mono); letter-spacing:.04em}
+.steps li + li::before{content:"→"; color:var(--ink-2)}
+
+/* feature card (small project) */
+.art{position:relative; display:grid; place-items:center; min-height:300px; padding:28px; overflow:hidden;
+  background:radial-gradient(120% 90% at 72% 8%,rgba(141,185,221,.18),transparent 60%),radial-gradient(80% 70% at 6% 100%,rgba(242,184,75,.12),transparent 62%),var(--hero-bg)}
+.art .iso{width:min(100%,360px); height:auto}
+.art .iso.wide{width:min(100%,460px)}
+.feature .art .iso{width:min(100%,250px)}
+.aim .art{border-radius:22px; border:1px solid var(--line); min-height:340px}
+.feature{display:grid; grid-template-columns:minmax(0,1fr); border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow)}
+@media (min-width:900px){.feature{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}}
+.feature-body{padding:clamp(22px,3.4vw,40px); display:flex; flex-direction:column; gap:1rem; min-width:0}
+.feature h3{font-family:var(--font-display); font-weight:400; font-size:clamp(1.3rem,2.2vw,1.6rem); line-height:1.4}
+.chip{display:inline-flex; align-items:center; gap:.5rem; align-self:flex-start; padding:.32rem .7rem; border:1px solid var(--line); border-radius:999px; font:500 .6875rem/1 var(--font-mono); letter-spacing:.06em; color:var(--ink-2)}
+.dot{width:7px; height:7px; border-radius:50%; background:var(--heat)}
+.facts{display:grid; grid-template-columns:5.8rem minmax(0,1fr); gap:.9rem 1rem}
+.facts dt{font:500 .6875rem/2 var(--font-mono); letter-spacing:.08em; color:var(--ink-2)}
+.facts dd{font-size:.9375rem; line-height:1.74}
+
+/* people */
+.people{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); gap:16px}
+.person{display:flex; align-items:center; gap:1.15rem; min-width:0; padding:1.3rem 1.4rem; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:var(--shadow)}
+.avatar{flex:none; width:64px; height:64px; border-radius:50%; display:grid; place-items:center; font:300 1.7rem/1 var(--font-display); color:var(--well-ink); border:1px solid var(--line);
+  background:repeating-radial-gradient(circle at 32% 30%,transparent 0 6px,color-mix(in srgb,var(--well) 24%,transparent) 6px 7px),var(--surface-2)}
+.person h3{font:600 1.1rem/1.4 var(--font-body)}
+.role{display:flex; align-items:center; gap:.45rem; font:500 .6875rem/1.4 var(--font-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2)}
+.person.pi .role{color:var(--heat-ink)}
+.person.pi .role::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--heat)}
+.person > div{min-width:0}
+.person h3 .ko{margin-left:.5rem; font-weight:400; font-size:.8125rem; color:var(--ink-2)}
+.person .dept{margin-top:.2rem; font-size:.875rem; line-height:1.5; color:var(--ink-2)}
+.mail{display:block; margin-top:.55rem; font:400 .8125rem/1.5 var(--font-mono); color:var(--well-ink); text-decoration:none; overflow-wrap:anywhere}
+.mail:hover{text-decoration:underline}
+.more{display:inline-block; margin-top:.5rem; font:500 .8125rem/1.5 var(--font-body); color:var(--well-ink); text-decoration:none; border-bottom:1px solid currentColor}
+.more:hover{filter:brightness(1.2)}
+
+/* footer */
+.foot{padding-block:clamp(48px,7vw,84px) 40px}
+.foot .mark-xl{font:300 clamp(4rem,16vw,10rem)/.9 var(--font-display); letter-spacing:-.03em; color:transparent; -webkit-text-stroke:1px rgba(157,176,193,.38); max-width:none; margin-bottom:1.6rem}
+.foot .uni-line{font:500 .8125rem/1.6 var(--font-mono); letter-spacing:.14em; text-transform:uppercase; color:var(--hero-ink)}
+.foot p{color:var(--ink-2); font-size:.8125rem; line-height:1.8; max-width:80ch}
+.foot p + p{margin-top:.5rem}
+
+/* isometric illustration system */
+.iso{display:block; overflow:visible}
+.iso .fl{fill:var(--art-fill); stroke:var(--art-line); stroke-width:1; stroke-linejoin:round}
+.iso .fl.hi{stroke:var(--art-accent)}
+.iso .fl.dsh{fill:none; stroke:var(--art-accent); stroke-dasharray:3 2.5}
+.iso .ln{fill:none; stroke:var(--art-line); stroke-width:1}
+.iso .ln2{stroke:var(--art-line); stroke-width:1}
+.iso .gr{stroke:var(--art-line); stroke-width:.6; opacity:.26}
+.iso .dt{fill:var(--art-line)}
+.iso .dt.hi{fill:var(--art-accent)}
+.iso .ac{fill:none; stroke:var(--art-accent); stroke-width:1.4}
+
+/* PI profile page */
+.pi-hero .hero-in{min-height:0}
+@media (min-width:900px){.pi-hero .hero-in{min-height:clamp(440px,38vw,540px)}}
+.crumb{margin:0 0 1.4rem; font:500 .75rem/1.5 var(--font-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); max-width:none}
+.crumb a{color:inherit; text-decoration:none; border-bottom:1px solid transparent}
+.crumb a:hover{border-bottom-color:currentColor}
+.pi-id{display:flex; align-items:center; gap:1.3rem; margin:0 0 1.5rem}
+.avatar.lg{width:88px; height:88px; font-size:2.4rem}
+.name{font-family:var(--font-display); font-weight:300; font-size:clamp(2.4rem,6.4vw,4.6rem); line-height:1; letter-spacing:-.02em; margin:0; color:var(--hero-ink)}
+.name .ko{display:block; margin-top:.6rem; font:400 1rem/1.4 var(--font-body); letter-spacing:0; color:var(--hero-ink-2)}
+.role-line{margin:.8rem 0 0; font:500 .75rem/1.5 var(--font-mono); letter-spacing:.14em; text-transform:uppercase; color:var(--hero-heat); max-width:none}
+.glance2{display:grid; grid-template-columns:minmax(0,1fr)}
+.glance2 > div{display:grid; grid-template-columns:minmax(0,1fr); gap:.3rem 2rem; padding:1.25rem 0; border-top:1px solid var(--line)}
+.glance2 > div:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:760px){.glance2 > div{grid-template-columns:200px minmax(0,1fr)}}
+.glance2 dt{font:500 .75rem/1.9 var(--font-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2)}
+.glance2 dd{font-size:1.0625rem; line-height:1.7}
+.honors-grid{display:grid; grid-template-columns:minmax(0,1fr); gap:16px}
+@media (min-width:760px){.honors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.honor{display:flex; flex-direction:column; gap:.6rem; min-width:0; padding:1.6rem; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:var(--shadow)}
+.honor .kind{font:500 .6875rem/1.4 var(--font-mono); letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); margin-top:.3rem}
+.honor h3{font:400 1.35rem/1.4 var(--font-display)}
+.foot a{color:var(--hero-ink); text-underline-offset:3px}
+</style>
+</head>
+<body>
+<div class="bgfx" aria-hidden="true"><canvas id="map"></canvas></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="page">
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>QBP</span></a>
+    <nav class="links" aria-label="Sections"><a href="index.html">Project</a><a href="#profile">Profile</a><a href="#honors">Honors</a></nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch between light and dark appearance" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" hidden><a href="index.html">Project</a><a href="#profile">Profile</a><a href="#honors">Honors</a></div>
+</header>
+
+<main>
+<section class="hero night pi-hero" id="top">
+  <canvas id="relief" aria-hidden="true"></canvas>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="crumb"><a href="index.html">Quantum-Boltzmann-Protein</a> / <a href="index.html#people">People</a></p>
+      <div class="pi-id">
+        <span class="avatar lg" aria-hidden="true" lang="ko">하</span>
+        <div>
+          <h1 class="name">Sangmin Ha <span class="ko" lang="ko">하상민</span></h1>
+          <p class="role-line">Principal Investigator</p>
+        </div>
+      </div>
+      <p class="affil"><span class="uni">Sungkyunkwan University</span><span class="prj">SKKU Advanced Institute of Nano Technology (SAINT)</span></p>
+      <p class="lede">Principal Investigator of Quantum-Boltzmann-Protein, an interdisciplinary research project that studies machine learning from a quantum perspective.</p>
+      <p class="cta"><a class="pill solid" href="mailto:hsgvwc@skku.edu">Contact <span aria-hidden="true">→</span></a><a class="pill" href="index.html">Back to the project</a></p>
+    </div>
+  </div>
+  <p class="hero-cap">Schematic of an energy landscape</p>
+</section>
+
+<section class="sec" id="profile">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Profile</p>
+      <h2>At a glance</h2>
+    </header>
+    <dl class="glance2">
+      <div><dt>Position</dt><dd>Principal Investigator, Quantum-Boltzmann-Protein</dd></div>
+      <div><dt>Current affiliation</dt><dd>SKKU Advanced Institute of Nano Technology (SAINT), Sungkyunkwan University</dd></div>
+      <div><dt>Department</dt><dd>Nano Department</dd></div>
+      <div><dt>Research focus</dt><dd>Machine learning from a quantum perspective: energy-based models and quantum-assisted sampling for proteins and biomolecules</dd></div>
+      <div><dt>Contact</dt><dd><a class="mail" href="mailto:hsgvwc@skku.edu">hsgvwc@skku.edu</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec alt" id="honors">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Recognition</p>
+      <h2>Honors and service</h2>
+    </header>
+    <ul class="honors-grid">
+      <li class="honor"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.5l2.4 2.4 4.6-5"/></svg><p class="kind">Service · 2022</p><h3>Judge, E2 Engineering Festa</h3></li>
+      <li class="honor"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/></svg><p class="kind">Award</p><h3>Minister of Science, ICT and Future Planning Award</h3></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot night">
+  <div class="wrap">
+    <div class="mark-xl" aria-hidden="true">QBP</div>
+    <p class="uni-line">Sungkyunkwan University · Interdisciplinary Research Project</p>
+    <p>Part of Quantum-Boltzmann-Protein. <a href="index.html">Back to the project page</a>.</p>
+  </div>
+</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+
+  /* ---------- shared helpers ---------- */
+  function mulberry(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function css(n, d) { var v = getComputedStyle(root).getPropertyValue(n).trim(); return v || d; }
+  function rgb(h) {
+    h = (h || "").replace("#", "");
+    if (h.length === 3) h = h.split("").map(function (c) { return c + c; }).join("");
+    var n = parseInt(h, 16);
+    if (isNaN(n)) return [31, 95, 142];
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+  function rgba(c, a) { return "rgba(" + c[0] + "," + c[1] + "," + c[2] + "," + a + ")"; }
+  function onTheme(fn) {
+    new MutationObserver(fn).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", fn);
+  }
+
+  /* ---------- theme toggle ---------- */
+  (function () {
+    var btn = $("#theme");
+    try { var s = localStorage.getItem("qbp-theme"); if (s === "light" || s === "dark") root.setAttribute("data-theme", s); } catch (e) {}
+    function cur() {
+      var t = root.getAttribute("data-theme");
+      if (t) return t;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    function sync() { if (btn) btn.setAttribute("aria-pressed", cur() === "dark" ? "true" : "false"); }
+    if (btn) btn.addEventListener("click", function () {
+      var n = cur() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", n);
+      try { localStorage.setItem("qbp-theme", n); } catch (e) {}
+      sync();
+    });
+    sync();
+  })();
+
+  /* ---------- nav ---------- */
+  (function () {
+    var nav = $("#nav"), mb = $("#menuBtn"), mm = $("#mobileMenu");
+    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 40); }
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    if (mb && mm) {
+      mb.addEventListener("click", function () {
+        var open = mm.hidden; mm.hidden = !open;
+        mb.setAttribute("aria-expanded", open ? "true" : "false");
+        nav.classList.toggle("scrolled", open || window.scrollY > 40);
+      });
+      $$("a", mm).forEach(function (a) { a.addEventListener("click", function () { mm.hidden = true; mb.setAttribute("aria-expanded", "false"); onScroll(); }); });
+    }
+  })();
+
+  /* ---------- marching squares ---------- */
+  var TAB = [null, [[3, 2]], [[2, 1]], [[3, 1]], [[0, 1]], null, [[0, 2]], [[0, 3]], [[0, 3]], [[0, 2]], null, [[0, 1]], [[3, 1]], [[2, 1]], [[3, 2]], null];
+  function edgePt(e, i, j, a, b, c, d, L) {
+    switch (e) {
+      case 0: return [i + (L - a) / (b - a), j];
+      case 1: return [i + 1, j + (L - b) / (c - b)];
+      case 2: return [i + (L - d) / (c - d), j + 1];
+      default: return [i, j + (L - a) / (d - a)];
+    }
+  }
+  function addContour(ctx, v, CW, CH, L, sx, sy) {
+    var S = CW + 1;
+    for (var cj = 0; cj < CH; cj++) {
+      for (var ci = 0; ci < CW; ci++) {
+        var a = v[cj * S + ci], b = v[cj * S + ci + 1], c = v[(cj + 1) * S + ci + 1], d = v[(cj + 1) * S + ci];
+        var idx = (a > L ? 8 : 0) | (b > L ? 4 : 0) | (c > L ? 2 : 0) | (d > L ? 1 : 0);
+        if (idx === 0 || idx === 15) continue;
+        var pairs = TAB[idx];
+        if (idx === 5) pairs = ((a + b + c + d) / 4 > L) ? [[0, 3], [2, 1]] : [[0, 1], [3, 2]];
+        else if (idx === 10) pairs = ((a + b + c + d) / 4 > L) ? [[0, 1], [3, 2]] : [[0, 3], [2, 1]];
+        for (var q = 0; q < pairs.length; q++) {
+          var p1 = edgePt(pairs[q][0], ci, cj, a, b, c, d, L), p2 = edgePt(pairs[q][1], ci, cj, a, b, c, d, L);
+          ctx.moveTo(p1[0] * sx, p1[1] * sy); ctx.lineTo(p2[0] * sx, p2[1] * sy);
+        }
+      }
+    }
+  }
+
+  /* ---------- page background: faint contour map ---------- */
+  (function () {
+    var cv = $("#map"); if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d"), lw = 0, lh = 0, timer = 0;
+    var rnd = mulberry(11), wells = [];
+    for (var k = 0; k < 12; k++) wells.push({ x: rnd(), y: rnd(), a: 0.45 + rnd() * 0.9, s: 0.06 + rnd() * 0.13 });
+    function field(x, y, ar) {
+      var e = 0;
+      for (var k = 0; k < wells.length; k++) {
+        var w = wells[k], dx = x - w.x * ar, dy = y - w.y;
+        e -= w.a * Math.exp(-(dx * dx + dy * dy) / (2 * w.s * w.s));
+      }
+      return e + 0.05 * Math.sin(9 * x + 4 * y) * Math.cos(7 * y - 3 * x);
+    }
+    function draw() {
+      var w = window.innerWidth, h = window.innerHeight, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      lw = w; lh = h;
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      var ar = w / h, CW = 120, CH = Math.max(24, Math.round(CW / ar)), S = CW + 1, v = new Float32Array(S * (CH + 1));
+      for (var j = 0; j <= CH; j++) for (var i = 0; i <= CW; i++) v[j * S + i] = field(i / CW * ar, j / CH, ar);
+      var well = rgb(css("--well", "#1F5F8E")), a = parseFloat(css("--map-a", ".15")) || 0.15;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.lineWidth = Math.max(1, dpr * 0.8); ctx.lineJoin = "round";
+      var sx = cv.width / CW, sy = cv.height / CH;
+      for (var L = -1.5; L <= -0.09; L += 0.14) {
+        ctx.strokeStyle = rgba(well, Math.min(0.5, a * (L < -0.9 ? 1.6 : 1)));
+        ctx.beginPath(); addContour(ctx, v, CW, CH, L, sx, sy); ctx.stroke();
+      }
+    }
+    function later() {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        if (window.innerWidth !== lw || Math.abs(window.innerHeight - lh) > 140) draw();
+      }, 160);
+    }
+    draw();
+    window.addEventListener("resize", later);
+    onTheme(draw);
+  })();
+
+  /* ---------- hero: still relief of the energy landscape ---------- */
+  (function () {
+    var cv = $("#relief"); if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d");
+    var AR = 1.2, NW = 4;
+    var WELLS = [[0.80, 0.56, 1.00, 0.12], [0.52, 0.28, 0.86, 0.11], [0.62, 0.84, 0.62, 0.09], [1.04, 0.22, 0.55, 0.09]];
+    var RUG = 0.06;
+    function energy(x, y) {
+      var e = 0;
+      for (var k = 0; k < NW; k++) {
+        var w = WELLS[k], dx = x - w[0], dy = y - w[1];
+        e -= w[2] * Math.exp(-(dx * dx + dy * dy) / (2 * w[3] * w[3]));
+      }
+      return e + RUG * Math.sin(17 * x + 3 * y) * Math.cos(13 * y - 2 * x);
+    }
+    var R = 72, P = 160, EG = new Float32Array(R * P);
+    for (var j = 0; j < R; j++) for (var i = 0; i < P; i++) EG[j * P + i] = energy(i / (P - 1) * AR, j / (R - 1));
+
+    var W = 1, H = 1, dpr = 1, col = {};
+    var baseW = 1, cx = 0, top = 0, span = 1, ampB = 1;
+    var G = { x0: 0, rw: 0, yb: 0, amp: 0, p: 1 };
+    var XS = new Float32Array(P), YS = new Float32Array(P);
+    function colors() {
+      col.bg = css("--hero-bg", "#070E16");
+      col.line = rgb(css("--hero-line", "#8DB9DD"));
+      col.heat = rgb(css("--hero-heat", "#F2B84B"));
+    }
+    function layout() {
+      if (W / dpr < 900) { baseW = W * 1.0; cx = W * 0.5; top = H * 0.20; span = H * 0.50; ampB = H * 0.20; }
+      else { baseW = W * 0.70; cx = W * 0.72; top = H * 0.16; span = H * 0.50; ampB = H * 0.19; }
+    }
+    function geom(t) {
+      var p = 0.60 + 0.55 * t;
+      G.p = p; G.rw = baseW * p; G.x0 = cx - G.rw * 0.5;
+      G.yb = top + span * Math.pow(t, 1.3); G.amp = ampB * p;
+    }
+    function draw() {
+      ctx.fillStyle = col.bg; ctx.fillRect(0, 0, W, H);
+      var t, i, j;
+      for (j = 0; j < R; j++) {
+        t = j / (R - 1); geom(t);
+        var line = new Path2D(), h1 = new Path2D(), h2 = new Path2D(), on1 = false, on2 = false;
+        for (i = 0; i < P; i++) {
+          var e = EG[j * P + i], X = G.x0 + (i / (P - 1)) * G.rw, Y = G.yb - e * G.amp;
+          XS[i] = X; YS[i] = Y;
+          if (i === 0) line.moveTo(X, Y); else line.lineTo(X, Y);
+          if (e < -0.28) { if (!on1) { h1.moveTo(X, Y); on1 = true; } else h1.lineTo(X, Y); } else on1 = false;
+          if (e < -0.62) { if (!on2) { h2.moveTo(X, Y); on2 = true; } else h2.lineTo(X, Y); } else on2 = false;
+        }
+        var poly = new Path2D(line), band = G.amp * 1.1 + 6 * dpr;
+        for (i = P - 1; i >= 0; i--) poly.lineTo(XS[i], YS[i] + band);
+        poly.closePath();
+        ctx.fillStyle = col.bg; ctx.fill(poly);
+        ctx.lineWidth = dpr * (0.7 + 0.7 * t);
+        ctx.strokeStyle = rgba(col.line, 0.14 + 0.58 * t); ctx.stroke(line);
+        ctx.strokeStyle = rgba(col.heat, 0.26 + 0.40 * t); ctx.lineWidth = dpr * (1 + 0.8 * t); ctx.stroke(h1);
+        ctx.strokeStyle = rgba(col.heat, 0.46 + 0.36 * t); ctx.lineWidth = dpr * (1.3 + 1.0 * t); ctx.stroke(h2);
+      }
+      ctx.globalCompositeOperation = "lighter";
+      for (var k = 0; k < NW; k++) {
+        geom(WELLS[k][1]);
+        var wx = G.x0 + (WELLS[k][0] / AR) * G.rw, wy = G.yb + WELLS[k][2] * G.amp * 0.9, rad = H * 0.22 * G.p;
+        var gr = ctx.createRadialGradient(wx, wy, 0, wx, wy, rad);
+        gr.addColorStop(0, rgba(col.heat, 0.18)); gr.addColorStop(1, rgba(col.heat, 0));
+        ctx.fillStyle = gr; ctx.fillRect(wx - rad, wy - rad, rad * 2, rad * 2);
+      }
+      ctx.globalCompositeOperation = "source-over";
+    }
+    function fit() {
+      var rc = cv.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      W = Math.max(2, Math.round(rc.width * dpr)); H = Math.max(2, Math.round(rc.height * dpr));
+      cv.width = W; cv.height = H;
+      colors(); layout(); draw();
+    }
+    fit();
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(cv); else window.addEventListener("resize", fit);
+  })();
+
+  })();
+</script>
+</body>
+</html>
